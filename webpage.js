@@ -16,10 +16,17 @@ function getComputerChoice()
 }
 
 // look at user choice and computer choice to decide who won the round
-function compareChoices()           
+function compareChoices(user, computer)           
 {
-    
-
+    if (user === computer) return "It's a tie !!"
+    else if ((user === "Rock" && computer === "Scissors") || (user === "Paper" && computer === "Rock") || (user === "Scissors" && computer === "Paper"))
+    {
+        return "You Win !!";
+    }
+    else
+    {
+        return "Computer Wins !!";
+    }
 }
 
 let userChoice = "";
@@ -45,22 +52,25 @@ rockButton.addEventListener("click", function()
 {
     console.log("rock");
     userChoice = "Rock"
-    computerChoice = getComputerChoice();
-    alert("You chose " + userChoice + "\nComputer chose " + computerChoice);
+    const computerChoice = getComputerChoice();
+    const result = compareChoices(userChoice, computerChoice)
+    alert("You chose " + userChoice + "\nComputer chose " + computerChoice + "\n" + result);
 });
 
 paperButton.addEventListener("click", function()
 {
     console.log("paper");
     userChoice = "Paper"
-    computerChoice = getComputerChoice();
-    alert("You chose " + userChoice + "\nComputer chose " + computerChoice);
+    const computerChoice = getComputerChoice();
+    const result = compareChoices(userChoice, computerChoice)
+    alert("You chose " + userChoice + "\nComputer chose " + computerChoice + "\n" + result);
 });
 
 scissorsButton.addEventListener("click", function()
 {
     console.log("scissors");
     userChoice = "Scissors"
-    computerChoice = getComputerChoice();
-    alert("You chose " + userChoice + "\nComputer chose " + computerChoice);
+    const computerChoice = getComputerChoice();
+    const result = compareChoices(userChoice, computerChoice)
+    alert("You chose " + userChoice + "\nComputer chose " + computerChoice + "\n" + result);
 });
