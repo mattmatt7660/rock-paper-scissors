@@ -94,3 +94,36 @@ body
     text-align:center;
     font-size: 50px;
 }
+
+#winScreen
+{
+    display: none;
+    text-align: center;
+    margin-top: 200px;
+}
+
+#winnerText
+{
+    font-size: 50px;
+}
+
+#restartButton
+{
+    padding: 15px;
+    font-size: 25px;
+    cursor: pointer;
+    background-color: wheat;
+}
+
+#restartButton:hover
+{
+    background-color: aquamarine;
+}
+
+#scoreboard
+{
+    position: absolute;
+    top: 120px;
+    font-size: 35px;
+}
+
