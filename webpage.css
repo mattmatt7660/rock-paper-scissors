@@ -86,3 +86,11 @@ body
     position: relative;
     height: 100vh;
 }
+
+#result
+{
+    position: absolute;
+    top: 50px;
+    text-align:center;
+    font-size: 50px;
+}

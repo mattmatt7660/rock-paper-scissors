@@ -7,6 +7,9 @@ const backButton = document.getElementById("backButton")
 const rockButton = document.getElementById("rockButton")
 const paperButton = document.getElementById("paperButton")
 const scissorsButton = document.getElementById("scissorsButton")
+const resultDiv = document.getElementById("result")
+let userScore = 0
+let computerScore = 0
 
 const choices = ["Rock", "Paper", "Scissors"];
 
@@ -54,7 +57,8 @@ rockButton.addEventListener("click", function()
     userChoice = "Rock"
     const computerChoice = getComputerChoice();
     const result = compareChoices(userChoice, computerChoice)
-    alert("You chose " + userChoice + "\nComputer chose " + computerChoice + "\n" + result);
+    //alert("You chose " + userChoice + "\nComputer chose " + computerChoice + "\n" + result);
+    resultDiv.textContent = "You chose " + userChoice + " | Computer Chose " + computerChoice + " | " + result;
 });
 
 paperButton.addEventListener("click", function()
@@ -63,7 +67,8 @@ paperButton.addEventListener("click", function()
     userChoice = "Paper"
     const computerChoice = getComputerChoice();
     const result = compareChoices(userChoice, computerChoice)
-    alert("You chose " + userChoice + "\nComputer chose " + computerChoice + "\n" + result);
+    //alert("You chose " + userChoice + "\nComputer chose " + computerChoice + "\n" + result);
+    resultDiv.textContent = "You chose " + userChoice + " | Computer Chose " + computerChoice + " | " + result;
 });
 
 scissorsButton.addEventListener("click", function()
@@ -72,5 +77,7 @@ scissorsButton.addEventListener("click", function()
     userChoice = "Scissors"
     const computerChoice = getComputerChoice();
     const result = compareChoices(userChoice, computerChoice)
-    alert("You chose " + userChoice + "\nComputer chose " + computerChoice + "\n" + result);
+    //alert("You chose " + userChoice + "\nComputer chose " + computerChoice + "\n" + result);
+    resultDiv.textContent = "You chose " + userChoice + " | Computer Chose " + computerChoice + " | " + result;
 });
+
