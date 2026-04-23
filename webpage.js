@@ -8,6 +8,7 @@ const rockButton = document.getElementById("rockButton")
 const paperButton = document.getElementById("paperButton")
 const scissorsButton = document.getElementById("scissorsButton")
 const resultDiv = document.getElementById("result")
+const scoreDiv = document.getElementById("scoreboard")
 let userScore = 0
 let computerScore = 0
 
