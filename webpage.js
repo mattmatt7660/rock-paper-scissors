@@ -58,8 +58,19 @@ rockButton.addEventListener("click", function()
     userChoice = "Rock"
     const computerChoice = getComputerChoice();
     const result = compareChoices(userChoice, computerChoice)
+    // scoreboard 
+    if (result === "You Win !!")
+    {
+        userScore++;
+    }
+    else if (result == "Computer Wins !!")
+    {
+        computerScore++;
+    }
+    
     //alert("You chose " + userChoice + "\nComputer chose " + computerChoice + "\n" + result);
     resultDiv.textContent = "You chose " + userChoice + " | Computer Chose " + computerChoice + " | " + result;
+    scoreDiv.textContent = "You: " + userScore + " | Computer: " + computerScore;
 });
 
 paperButton.addEventListener("click", function()
@@ -68,8 +79,18 @@ paperButton.addEventListener("click", function()
     userChoice = "Paper"
     const computerChoice = getComputerChoice();
     const result = compareChoices(userChoice, computerChoice)
+    // scoreboard 
+    if (result === "You Win !!")
+        {
+            userScore++;
+        }
+        else if (result == "Computer Wins !!")
+        {
+            computerScore++;
+        }
     //alert("You chose " + userChoice + "\nComputer chose " + computerChoice + "\n" + result);
     resultDiv.textContent = "You chose " + userChoice + " | Computer Chose " + computerChoice + " | " + result;
+    scoreDiv.textContent = "You: " + userScore + " | Computer: " + computerScore;
 });
 
 scissorsButton.addEventListener("click", function()
@@ -78,7 +99,17 @@ scissorsButton.addEventListener("click", function()
     userChoice = "Scissors"
     const computerChoice = getComputerChoice();
     const result = compareChoices(userChoice, computerChoice)
+    // scoreboard 
+    if (result === "You Win !!")
+        {
+            userScore++;
+        }
+        else if (result == "Computer Wins !!")
+        {
+            computerScore++;
+        }
     //alert("You chose " + userChoice + "\nComputer chose " + computerChoice + "\n" + result);
     resultDiv.textContent = "You chose " + userChoice + " | Computer Chose " + computerChoice + " | " + result;
+    scoreDiv.textContent = "You: " + userScore + " | Computer: " + computerScore;
 });
 
