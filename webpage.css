@@ -1,12 +1,18 @@
-/* title */
+/* BODY */
+
+body
+{
+    background-color: wheat;
+}
+
+/* TYPOGRAPHY */
+
 h1
 {
     text-align: center;
     color: black;
-    
 }
 
-/* ready to begin ? */
 h3
 {
     text-align: center;
@@ -14,69 +20,12 @@ h3
     font-size: 30px;
 }
 
-/* rules */
 p
 {
     font-size: 20px;
 }
 
-#startButton
-{
-    display: block;
-    cursor: pointer;
-    padding: 10px;
-    margin: auto;
-    background-color: wheat;
-    font-size: 25px;
-}
-
-#startButton:hover
-{
-    background-color: aquamarine
-}
-
-#backButton
-{
-    display: block;
-    cursor: pointer;
-    padding: 10px;
-    background-color: wheat;
-    font-size: 15px;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-}
-
-#backButton:hover
-{
-    background-color: aquamarine
-}
-
-#options
-{
-    display: flex;
-    gap: 20px;
-}
-
-.option
-{
-    display: flex;
-    gap: 20px;
-    background-color: wheat;
-    cursor: pointer;
-    font-size: 25px;
-}
-
-.option:hover
-{
-    background-color: aquamarine;
-}
-
-
-body
-{
-    background-color: wheat;
-}
+/* SCREENS */
 
 #gameScreen
 {
@@ -87,20 +36,89 @@ body
     height: 100vh;
 }
 
-#result
-{
-    position: absolute;
-    top: 50px;
-    text-align:center;
-    font-size: 50px;
-}
-
 #winScreen
 {
     display: none;
     text-align: center;
     margin-top: 200px;
 }
+
+/* GAME UI */
+
+#result
+{
+    position: absolute;
+    top: 50px;
+    text-align: center;
+    font-size: 50px;
+}
+
+#scoreboard
+{
+    position: absolute;
+    top: 120px;
+    font-size: 35px;
+}
+
+/* BUTTONS (default) */
+
+button
+{
+    cursor: pointer;
+    background-color: wheat;
+}
+
+/* START BUTTON */
+
+#startButton
+{
+    display: block;
+    padding: 10px;
+    margin: auto;
+    font-size: 25px;
+}
+
+#startButton:hover
+{
+    background-color: aquamarine;
+}
+
+/* BACK BUTTON */
+
+#backButton
+{
+    display: block;
+    padding: 10px;
+    font-size: 15px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+#backButton:hover
+{
+    background-color: aquamarine;
+}
+
+/* GAME OPTIONS */
+
+#options
+{
+    display: flex;
+    gap: 20px;
+}
+
+.option
+{
+    font-size: 25px;
+}
+
+.option:hover
+{
+    background-color: aquamarine;
+}
+
+/* WIN SCREEN */
 
 #winnerText
 {
@@ -111,19 +129,9 @@ body
 {
     padding: 15px;
     font-size: 25px;
-    cursor: pointer;
-    background-color: wheat;
 }
 
 #restartButton:hover
 {
     background-color: aquamarine;
 }
-
-#scoreboard
-{
-    position: absolute;
-    top: 120px;
-    font-size: 35px;
-}
-

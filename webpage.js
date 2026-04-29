@@ -1,115 +1,121 @@
+// screens
+const startScreen = document.getElementById("startScreen");
+const gameScreen = document.getElementById("gameScreen");
+const winScreen = document.getElementById("winScreen");
 
-// variables
-const startScreen = document.getElementById("startScreen")
-const gameScreen = document.getElementById("gameScreen")
-const startButton = document.getElementById("startButton")
-const backButton = document.getElementById("backButton")
-const rockButton = document.getElementById("rockButton")
-const paperButton = document.getElementById("paperButton")
-const scissorsButton = document.getElementById("scissorsButton")
-const resultDiv = document.getElementById("result")
-const scoreDiv = document.getElementById("scoreboard")
-let userScore = 0
-let computerScore = 0
+// buttons
+const startButton = document.getElementById("startButton");
+const backButton = document.getElementById("backButton");
+const rockButton = document.getElementById("rockButton");
+const paperButton = document.getElementById("paperButton");
+const scissorsButton = document.getElementById("scissorsButton");
+const restartButton = document.getElementById("restartButton");
 
+// text
+const resultDiv = document.getElementById("result");
+const winnerText = document.getElementById("winnerText");
+
+// choices
 const choices = ["Rock", "Paper", "Scissors"];
+
+// scores
+const scoreDiv = document.getElementById("scoreboard");
+let userScore = 0;
+let computerScore = 0;
+
+function updateScore()
+{
+    scoreDiv.textContent = "You: " + userScore + " | Computer: " + computerScore;
+}
 
 function getComputerChoice()
 {
     return choices[Math.floor(Math.random() * choices.length)];
 }
 
-// look at user choice and computer choice to decide who won the round
-function compareChoices(user, computer)           
+function compareChoices(user, computer)
 {
-    if (user === computer) return "It's a tie !!"
-    else if ((user === "Rock" && computer === "Scissors") || (user === "Paper" && computer === "Rock") || (user === "Scissors" && computer === "Paper"))
+    if (user === computer) return "Tie!";
+    
+    if (
+        (user === "Rock" && computer === "Scissors") ||
+        (user === "Paper" && computer === "Rock") ||
+        (user === "Scissors" && computer === "Paper")
+    )
     {
-        return "You Win !!";
+        return "You Win!";
     }
-    else
+
+    return "Computer Wins!";
+}
+
+function playRound(userChoice)
+{
+    const computerChoice = getComputerChoice();
+    const result = compareChoices(userChoice, computerChoice);
+
+    if (result === "You Win!")
+        userScore++;
+    else if (result === "Computer Wins!")
+        computerScore++;
+
+    resultDiv.textContent =
+        "You chose " + userChoice +
+        " | Computer chose " + computerChoice +
+        " | " + result;
+
+    updateScore();
+    checkWinner();
+}
+
+function checkWinner()
+{
+    if (userScore === 3)
     {
-        return "Computer Wins !!";
+        gameScreen.style.display = "none";
+        winScreen.style.display = "block";
+        winnerText.textContent = "🎉 You Won Best of 5!";
+    }
+
+    if (computerScore === 3)
+    {
+        gameScreen.style.display = "none";
+        winScreen.style.display = "block";
+        winnerText.textContent = "💻 Computer Won Best of 5!";
     }
 }
 
-let userChoice = "";
+function resetGame()
+{
+    userScore = 0;
+    computerScore = 0;
 
+    updateScore();
 
-// start button switches to game screen
-startButton.addEventListener("click", function()
+    resultDiv.textContent = "";
+
+    winScreen.style.display = "none";
+    startScreen.style.display = "block";
+}
+// start
+startButton.addEventListener("click", function ()
 {
     startScreen.style.display = "none";
     gameScreen.style.display = "flex";
-
+    updateScore();
 });
 
-// back button switches back to start screen
-backButton.addEventListener("click", function()
+// back
+backButton.addEventListener("click", function ()
 {
     gameScreen.style.display = "none";
     startScreen.style.display = "block";
 });
 
-// options buttons
-rockButton.addEventListener("click", function()
-{
-    console.log("rock");
-    userChoice = "Rock"
-    const computerChoice = getComputerChoice();
-    const result = compareChoices(userChoice, computerChoice)
-    // scoreboard 
-    if (result === "You Win !!")
-    {
-        userScore++;
-    }
-    else if (result == "Computer Wins !!")
-    {
-        computerScore++;
-    }
-    
-    //alert("You chose " + userChoice + "\nComputer chose " + computerChoice + "\n" + result);
-    resultDiv.textContent = "You chose " + userChoice + " | Computer Chose " + computerChoice + " | " + result;
-    scoreDiv.textContent = "You: " + userScore + " | Computer: " + computerScore;
-});
+// choices
+rockButton.addEventListener("click", () => playRound("Rock"));
+paperButton.addEventListener("click", () => playRound("Paper"));
+scissorsButton.addEventListener("click", () => playRound("Scissors"));
 
-paperButton.addEventListener("click", function()
-{
-    console.log("paper");
-    userChoice = "Paper"
-    const computerChoice = getComputerChoice();
-    const result = compareChoices(userChoice, computerChoice)
-    // scoreboard 
-    if (result === "You Win !!")
-        {
-            userScore++;
-        }
-        else if (result == "Computer Wins !!")
-        {
-            computerScore++;
-        }
-    //alert("You chose " + userChoice + "\nComputer chose " + computerChoice + "\n" + result);
-    resultDiv.textContent = "You chose " + userChoice + " | Computer Chose " + computerChoice + " | " + result;
-    scoreDiv.textContent = "You: " + userScore + " | Computer: " + computerScore;
-});
-
-scissorsButton.addEventListener("click", function()
-{
-    console.log("scissors");
-    userChoice = "Scissors"
-    const computerChoice = getComputerChoice();
-    const result = compareChoices(userChoice, computerChoice)
-    // scoreboard 
-    if (result === "You Win !!")
-        {
-            userScore++;
-        }
-        else if (result == "Computer Wins !!")
-        {
-            computerScore++;
-        }
-    //alert("You chose " + userChoice + "\nComputer chose " + computerChoice + "\n" + result);
-    resultDiv.textContent = "You chose " + userChoice + " | Computer Chose " + computerChoice + " | " + result;
-    scoreDiv.textContent = "You: " + userScore + " | Computer: " + computerScore;
-});
-
+// restart
+restartButton.addEventListener("click", resetGame);

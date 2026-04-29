@@ -1,68 +1,51 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>
-            Korean Rock Paper Scissors
-        </title>
-        <link rel="stylesheet" href="webpage.css">
-    </head>
-    
-    <body>
-        <div id = "startScreen">
-                
-            <h1>
-                GawiBawiBo
-            </h1>
-            <h2>
-                Wanna play rock, paper, scissors? Lets play
-            </h2>
-            <p>
-                Here are the rules: 
-                There are 3 choices: rock, paper, or scissors. You pick one and the computer will pick one at random.
-            </p>
-            <p>
-                Rock beats scissors<br>
-                Paper beats rock<br>
-                Scissors beats paper<br>
-            </p>
-            <h3>
-                Ready to begin?
-            </h3>
-            <button id="startButton">
-                Start
-            </button>
-        </div>
+<head>
+    <title>Korean Rock Paper Scissors</title>
+    <link rel="stylesheet" href="webpage.css">
+</head>
 
-        <div id = "gameScreen">
-            <button id="backButton">
-                Back
-            </button>
-            <div id = "result"></div>
+<body>
 
-            <div id = "options">
-                <button id="rockButton" class = "option">
-                    Rock
-                </button>
-    
-                <button id="paperButton" class = "option">
-                    Paper
-                </button>
-    
-                <button id="scissorsButton" class = "option">
-                    Scissors
-                </button>
-            </div>
+<div id="startScreen">
+    <div class="menuCard">
+    </div>
+    <h1>GawiBawiBo</h1>
 
-            <div id = "scoreboard">
-                You: 0 | Computer: 0
-            </div>
-            <div id="winScreen">
-                <h1 id="winnerText"></h1>
-                <button id="restartButton"> 
-                    Play Again 
-                </button>
-            </div> 
-        </div>  
-        <script src="webpage.js"></script>
-    </body>
+    <h2>Wanna play rock, paper, scissors? Lets play</h2>
+
+    <p class="subtitle"> The Classic Korean Version ✊📄✂️ </p>
+
+    <button id="startButton">Start</button>
+    </div>
+</div>
+
+
+<div id="gameScreen">
+
+    <button id="backButton">Back</button>
+
+    <div id="result"></div>
+
+    <div id="scoreboard">
+        You: 0 | Computer: 0
+    </div>
+
+    <div id="options">
+        <button id="rockButton" class="option">Rock</button>
+        <button id="paperButton" class="option">Paper</button>
+        <button id="scissorsButton" class="option">Scissors</button>
+    </div>
+
+</div>
+
+
+<div id="winScreen">
+    <h1 id="winnerText"></h1>
+    <button id="restartButton">Play Again</button>
+</div>
+
+<script src="webpage.js"></script>
+
+</body>
 </html>
