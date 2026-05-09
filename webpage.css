@@ -2,15 +2,18 @@
 
 body
 {
-    background-color: wheat;
+    background: linear-gradient(to bottom right, wheat, orange);
+    margin: 0;
+    font-family: arial, sans-serif;
 }
 
 /* TYPOGRAPHY */
 
 h1
 {
-    text-align: center;
-    color: black;
+    font-size: 80px;
+    margin-bottom: 10px;
+    letter-spacing: 3px;
 }
 
 h3
@@ -25,7 +28,21 @@ p
     font-size: 20px;
 }
 
+.subtitle
+{
+    font-size: 28px;
+    margin-bottom: 40px;
+}
+
 /* SCREENS */
+
+#startScreen
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
 
 #gameScreen
 {
@@ -41,6 +58,17 @@ p
     display: none;
     text-align: center;
     margin-top: 200px;
+}
+
+/* GAME MENU */
+.menuCard
+{
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 60px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
 }
 
 /* GAME UI */
@@ -72,15 +100,17 @@ button
 
 #startButton
 {
-    display: block;
-    padding: 10px;
-    margin: auto;
-    font-size: 25px;
+    padding: 15px 40px;
+    font-size: 30px;
+    border-radius: 15px;
+    border: none;
+    transition: 0.3s;
 }
 
 #startButton:hover
 {
     background-color: aquamarine;
+    transform: scale(1.1);
 }
 
 /* BACK BUTTON */
