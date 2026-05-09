@@ -35,29 +35,40 @@ p
 }
 
 /* SCREENS */
+#startScreen, 
+#gameScreen,
+#winScreen
+{
+    height: 100vh;
+    width: 100%
+}
 
 #startScreen
 {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
 }
 
-#gameScreen
+#gameScreen 
 {
     display: none;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: relative;
-    height: 100vh;
-}
 
+    height: 100vh;
+    width: 100%;
+
+    text-align: center;
+}
 #winScreen
 {
     display: none;
-    text-align: center;
-    margin-top: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 /* GAME MENU */
@@ -73,19 +84,16 @@ p
 
 /* GAME UI */
 
-#result
+#result 
 {
-    position: absolute;
-    top: 50px;
-    text-align: center;
     font-size: 50px;
+    margin-bottom: 20px;
 }
 
 #scoreboard
 {
-    position: absolute;
-    top: 120px;
-    font-size: 35px;
+    font-size: 30px;
+    margin-bottom: 40px;
 }
 
 /* BUTTONS (default) */
