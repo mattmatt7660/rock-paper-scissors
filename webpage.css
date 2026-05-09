@@ -157,11 +157,15 @@ button
 
 #restartButton
 {
-    padding: 15px;
-    font-size: 25px;
+    padding: 15px 40px;
+    font-size: 30px;
+    border-radius: 15px;
+    border: none;
+    transition: 0.3s;
 }
 
 #restartButton:hover
 {
     background-color: aquamarine;
+    transform: scale(1.1);
 }
