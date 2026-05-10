@@ -137,6 +137,7 @@ button
 #backButton:hover
 {
     background-color: aquamarine;
+    transform: scale(1.1);
 }
 
 /* GAME OPTIONS */
@@ -155,6 +156,7 @@ button
 .option:hover
 {
     background-color: aquamarine;
+    transform: scale(1.1);
 }
 
 /* WIN SCREEN */
