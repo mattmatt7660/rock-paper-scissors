@@ -73,14 +73,14 @@ function checkWinner()
     if (userScore === 3)
     {
         gameScreen.style.display = "none";
-        winScreen.style.display = "block";
+        winScreen.style.display = "flex";
         winnerText.textContent = "🎉 You Won Best of 5!";
     }
 
     if (computerScore === 3)
     {
         gameScreen.style.display = "none";
-        winScreen.style.display = "block";
+        winScreen.style.display = "flex";
         winnerText.textContent = "💻 Computer Won Best of 5!";
     }
 }
@@ -94,8 +94,8 @@ function resetGame()
 
     resultDiv.textContent = "";
 
-    winScreen.style.display = "none";
-    startScreen.style.display = "block";
+    winScreen.style.display = "flex";
+    startScreen.style.display = "flex";
 }
 // start
 startButton.addEventListener("click", function ()
@@ -109,7 +109,7 @@ startButton.addEventListener("click", function ()
 backButton.addEventListener("click", function ()
 {
     gameScreen.style.display = "none";
-    startScreen.style.display = "block";
+    startScreen.style.display = "flex";
 });
 
 // choices
