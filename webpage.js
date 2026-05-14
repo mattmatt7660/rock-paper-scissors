@@ -52,20 +52,29 @@ function compareChoices(user, computer)
 function playRound(userChoice)
 {
     const computerChoice = getComputerChoice();
-    const result = compareChoices(userChoice, computerChoice);
 
-    if (result === "You Win!")
-        userScore++;
-    else if (result === "Computer Wins!")
-        computerScore++;
+    resultDiv.textContent = "Rock...Paper...Scissors... SHOOT!";
 
-    resultDiv.textContent =
-        "You chose " + userChoice +
-        " | Computer chose " + computerChoice +
-        " | " + result;
+    setTimeout
+    (
+        function () 
+        {
+            const result = compareChoices(userChoice, computerChoice);
 
-    updateScore();
-    checkWinner();
+            if (result === "You Win!")
+                userScore++;
+            else if (result === "Computer Wins!")
+                computerScore++;
+
+            resultDiv.textContent =
+                "You chose " + userChoice +
+                " | Computer chose " + computerChoice +
+                " | " + result;
+
+            updateScore();
+            checkWinner();
+        }, 1000
+    );
 }
 
 function checkWinner()
