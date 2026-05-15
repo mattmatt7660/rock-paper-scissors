@@ -62,10 +62,22 @@ function playRound(userChoice)
             const result = compareChoices(userChoice, computerChoice);
 
             if (result === "You Win!")
+            {
                 userScore++;
+                resultDiv.style.color = "green";
+            }
+                
             else if (result === "Computer Wins!")
-                computerScore++;
+            {
+                 computerScore++;
+                 resultDiv.style.color = "red"
+            }
 
+            else 
+            {
+                resultDiv.style.color = "black"
+            }
+               
             resultDiv.textContent =
                 "You chose " + userChoice +
                 " | Computer chose " + computerChoice +
