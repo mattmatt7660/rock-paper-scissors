@@ -203,3 +203,40 @@ button
     background-color: aquamarine;
     transform: scale(1.1);
 }
+
+/* COLOR EFFECT */
+@keyframes rainbow
+{
+    0%   {color: red;}
+    16%  {color: orange;}
+    33%  {color: yellow;}
+    50%  {color: green;}
+    66%  {color: blue;}
+    83%  {color: indigo;}
+    100% {color: violet;}
+}
+
+#winnerText
+{
+    font-size: 50px;
+    animation: rainbow 1.5s linear infinite;
+}
+
+@keyframes pulse
+{
+    0%, 100% {transform: scale(1);}
+    50%       {transform: scale(1.05);}
+}
+
+#winnerText
+{
+    animation: rainbow 1.5s linear infinite, 
+               pulse 0.8s ease-in-out infinite;
+}
+
+@keyframes glow
+{
+    0%, 100% {text-shadow: 0 0 10px rgba(255, 255, 0, 0.8);}
+    50%       {text-shadow: 0 0 25px rgba(255, 100, 255, 0.9);}
+}
+

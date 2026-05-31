@@ -77,6 +77,7 @@ function playRound(userChoice)
             else 
             {
                 resultDiv.style.color = "black"
+                resultDiv.style.color = "grey"
             }
                
             resultDiv.textContent =
@@ -90,6 +91,8 @@ function playRound(userChoice)
     );
 }
 
+
+
 function checkWinner()
 {
     if (userScore === 3)
@@ -97,6 +100,7 @@ function checkWinner()
         gameScreen.style.display = "none";
         winScreen.style.display = "flex";
         winnerText.textContent = "🎉 You Won Best of 5!";
+        winnerText.color = "rainbow";
     }
 
     if (computerScore === 3)
