@@ -43,6 +43,8 @@ p
     width: 100%;
     justify-content: center;
     align-items: center;
+    font-family: 'Press Start 2P', cursive;
+    
 }
 
 #startScreen
@@ -104,14 +106,17 @@ p
 
 #result 
 {
-    font-size: 50px;
+    font-size: 30px;
     margin-bottom: 20px;
+    font-family: 'Press Start 2P', cursive;
+    text-shadow: 0 0 10px rgba(255, 200, 0, 0.8)
 }
 
 #scoreboard
 {
     font-size: 30px;
     margin-bottom: 40px;
+    font-family: 'Press Start 2P', cursive;
 }
 
 /* BUTTONS (default) */
@@ -120,6 +125,7 @@ button
 {
     cursor: pointer;
     background-color: wheat;
+    font-family: 'Press Start 2P', cursive;
 }
 
 /* START BUTTON */
