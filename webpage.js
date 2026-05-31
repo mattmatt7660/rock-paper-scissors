@@ -53,6 +53,7 @@ function playRound(userChoice)
 {
     const computerChoice = getComputerChoice();
 
+    resultDiv.style.color = "black";
     resultDiv.textContent = "Rock...Paper...Scissors... SHOOT!";
 
     setTimeout
